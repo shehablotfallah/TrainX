@@ -1,0 +1,26 @@
+﻿<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a asp-controller="Home" asp-action="Index" class="logo">Train<em>X</em></a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a asp-controller="Home" asp-action="Index" active-when="Home">Home</a></li>
+                        <li class="scroll-to-section"><a asp-controller="Home" asp-action="Program" active-when="Program">Program</a></li>
+                        <li class="scroll-to-section"><a asp-controller="Home" asp-action="Classes" active-when="Classes">Classes</a></li>
+                        <li class="scroll-to-section"><a asp-controller="Home" asp-action="Contact" active-when="Contact">Contact</a></li> 
+                        @*<li class="main-button"><a asp-area="Identity" asp-page="/Account/Register">Sign Up</a></li>*@
+                        <partial name="_LoginPartial" />
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
