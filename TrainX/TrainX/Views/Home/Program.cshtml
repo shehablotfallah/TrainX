@@ -1,0 +1,180 @@
+﻿@model IEnumerable<Sport>
+
+@{
+    ViewData["Title"] = "Program";
+}
+
+@section Styles{
+
+}
+
+<!-- ***** Call to Action Start ***** -->
+<section class="section mb-5" id="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <div class="section-heading">
+                        <h2>Choose <em>Program</em></h2>
+                        <img src="~/assets/images/line-dec.png" alt="waves">
+                        <p>TrainX website provides variety of programs with different levels. You can choose the desired program.The pain you feel today will be the strength you feel tomorrow.From here. Enjoy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+
+<!-- ***** Features Item Start ***** -->
+<section class="section" id="features">
+    <div class="container">
+        <div class="row"> 
+            @foreach (var item in Model)
+            {
+                <div class="col-4 mb-5">
+                    <div class="cardstyle card">
+                        <img style="height: 250px" src="@item.ImageUrl" class="card-img-top" alt="First One">
+                        <div class="card-body textcolor">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">@item.Description</p>
+                            <a asp-controller="Video" asp-action="Index" class="btn">Discover More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- ***** Features Item End ***** -->
+
+<div class="offer_area offer_bg">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-lg-6">
+                <div class="offer_text">
+                    <h4>A Big Offer for <br>
+                            This Summer</h4>
+                    <h3>50% Off</h3>
+                    <p>Before your body, your mind comes to the gym.Get the offer now</p>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="priscing_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_prising text-center">
+                    <div class="prising_header">
+                            <h3>Beginner</h3>
+                            <span>$45</span>
+                    </div>
+                    <div class="pricing_body">
+                        <ul>
+                            <li>24h unlimited access</li>
+                            <li>Trainer Advice</li>
+                            <li class="off-color">Locker + Bathroom</li>
+                            <li class="off-color">Personal trainer</li>
+                        </ul>
+                    </div>
+                    <div class="pricing_btn">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_prising text-center">
+                    <div class="prising_header">
+                            <h3>Expert</h3>
+                            <span>$45</span>
+                    </div>
+                    <div class="pricing_body">
+                        <ul>
+                            <li>24h unlimited access</li>
+                            <li>Trainer Advice</li>
+                            <li class="off-color">Locker + Bathroom</li>
+                            <li class="off-color">Personal trainer</li>
+                        </ul>
+                    </div>
+                    <div class="pricing_btn">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_prising text-center">
+                    <div class="prising_header">
+                            <h3>Pro</h3>
+                            <span>$45</span>
+                    </div>
+                    <div class="pricing_body">
+                        <ul>
+                            <li>24h unlimited access</li>
+                            <li>Trainer Advice</li>
+                            <li class="off-color">Locker + Bathroom</li>
+                            <li class="off-color">Personal trainer</li>
+                        </ul>
+                    </div>
+                    <div class="pricing_btn">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="features_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-73">
+                    <h3>Our Features</h3>
+                    <p>we have more features that are not in any other application which makes us unique among others, with more correct<br /> calculations and coaching support all for free and in the hand of every user.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="single_feature text-center mb-73">
+                    <div class="icon">
+                        <img src="~/assets/img/svg_icon/1.svg" alt="">
+                    </div>
+                    <h4>Weightlifting</h4>
+                    <p>Weight lifting is a type of strength training that involves lifting and lowering weights, such as barbells, dumbbells, or kettlebells.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single_feature text-center">
+                    <div class="icon">
+                        <img src="~/assets/img/svg_icon/2.svg" alt="">
+                    </div>
+                    <h4>Specific Muscles</h4>
+                    <p>Muscle fitness means having muscles that can lift heavier objects or muscles that will work longer before becoming exhausted</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single_feature text-center">
+                    <div class="icon">
+                        <img src="~/assets/img/svg_icon/3.svg" alt="">
+                    </div>
+                    <h4>Flex Your Muscles</h4>
+                    <p>Muscle fitness Weightlifting is an athletic discipline which requires lifting of heavy weights in a progressive manner</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single_feature text-center">
+                    <div class="icon">
+                        <img src="~/assets/img/svg_icon/4.svg" alt="">
+                    </div>
+                    <h4>Cardio Exercises</h4>
+                    <p>Cardio Sport is a comprehensive training system that will get you into the best shape of your life.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

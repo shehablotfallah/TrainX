@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - TrainX</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="~/assets/css/font-awesome.css">
+        <link href="~/assets/css/style.css" rel="stylesheet" />
+
+        @await RenderSectionAsync("Styles", required: false)
+        <link rel="stylesheet" href="~/assets/css/templatemo-training-studio.css">
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/TrainX.styles.css" asp-append-version="true" />
+        <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.png">
+    </head>
+    <body>
+        <!-- ***** Preloader Start ***** -->
+        <div id="js-preloader" class="js-preloader">
+            <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            </div>
+        </div>
+        <!-- ***** Preloader End ***** -->
+    
+        <partial  name="_Header"/>
+          @RenderBody()
+        
+        <!-- ***** Footer Start ***** -->
+        <partial name="_Footer"/>
+
+        <!-- jQuery -->
+        <script src="~/assets/js/jquery-2.1.0.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="~/assets/js/popper.js"></script>
+        <script src="~/assets/js/bootstrap.min.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+        <!-- Plugins -->
+        @await RenderSectionAsync("Plugins", required: false)
+        <script src="~/assets/js/scrollreveal.min.js"></script>
+        <script src="~/assets/js/waypoints.min.js"></script>
+        <script src="~/assets/js/jquery.counterup.min.js"></script>
+        <script src="~/assets/js/imgfix.min.js"></script> 
+        <script src="~/assets/js/mixitup.js"></script> 
+        <script src="~/assets/js/accordions.js"></script>
+        <!-- Global Init -->
+        <script src="~/assets/js/custom.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    </body>
+</html>

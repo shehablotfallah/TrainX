@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TrainX.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <div class="section-heading">
+                        <h2>All <em>User</em></h2>
+                        <img src="~/assets/images/line-dec.png" alt="waves">
+                        <p>Training Studio is free CSS template for gyms and fitness centers. You are allowed to use this layout for your business website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <span>
+                <a class="btn btn-primary" asp-action="Create">Create New</a>
+            </span>
+            <div class="mt-3">
+                <table class="table table-dark text-light">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Password)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Sport)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Password)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Sport.Id)
+                                </td>
+                                <td>
+                                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>

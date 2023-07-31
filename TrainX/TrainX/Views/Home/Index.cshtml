@@ -1,0 +1,327 @@
+﻿
+@model IEnumerable<Sport>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- ***** Main Banner Area Start ***** -->
+<div class="main-banner" id="top">
+    <video autoplay muted loop id="bg-video">
+        <source src="~/assets/images/gym-video.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-overlay header-text">
+        <div class="caption">
+            <h6>work harder, get stronger</h6>
+            <h2>easy with our <em>gym</em></h2>
+            <div class="main-button scroll-to-section">
+                <a asp-controller="Users" asp-action="Create">Become a member</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Main Banner Area End ***** -->
+
+<!-- catagory_area  -->
+<div class="catagory_area">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters"> 
+            <div class="col-lg-6 col-md-6">
+                <div class="single_catagory text-center overlay2 cat_bg_1">
+                    <h3>For Girl</h3>
+                    <p>There are many variations of passages of lorem <br> Ipsum available, but the majority have suffered <br> alteration.</p>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single_catagory text-center overlay2 cat_bg_2">
+                    <h3>For Boys</h3>
+                    <p>There are many variations of passages of lorem <br> Ipsum available, but the majority have suffered <br> alteration.</p>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ catagory_area  -->
+
+<!-- ***** Features Item Start ***** -->
+<section class="section" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Choose <em>Program</em></h2>
+                    <img src="~/assets/images/line-dec.png" alt="waves">
+                    <p>TrainX website provides variety of programs with different levels. You can choose the desired program.The pain you feel today will be the strength you feel tomorrow.From here. Enjoy</p>
+                </div>
+            </div>
+            <div class="row"> 
+                @foreach (var item in Model)
+                {
+                    <div class="col-4 mb-5">
+                        <div class="cardstyle card">
+                            <img style="height: 250px" src="@item.ImageUrl" class="card-img-top" alt="First One">
+                            <div class="card-body textcolor">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text">@item.Description</p>
+                                <a asp-controller="Video" asp-action="Index" class="btn">Discover More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Item End ***** -->
+
+<!-- ***** Call to Action Start ***** -->
+<section class="section" id="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <h2>Don’t <em>think</em>, begin <em>today</em>!</h2>
+                    <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</p>
+                    <div class="main-button scroll-to-section">
+                        <a asp-area="Identity" asp-page="/Account/Login">Become a member</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+<!-- ***** Our Classes Start ***** -->
+<section class="section" id="our-classes">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Our <em>Classes</em></h2>
+                    <img src="~/assets/images/line-dec.png" alt="">
+                    <p>The site provides you with variations of classes in different categories.they are fun way to lose weight and get in shape fast. You can start your journey now</p>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="tabs">
+            <div class="col-lg-4">
+                <ul>
+                    <li><a href='#tabs-1'><img src="~/assets/images/tabs-first-icon.png" alt="">Weight lifting Class</a></li>
+                    <li><a href='#tabs-2'><img src="~/assets/images/tabs-first-icon.png" alt="">Cardio Class</a></li>
+                    <li><a href='#tabs-3'><img src="~/assets/images/tabs-first-icon.png" alt="">Fitness Class</a></li>
+                    <li><a href='#tabs-4'><img src="~/assets/images/tabs-first-icon.png" alt="">Yoga Class</a></li>
+                    <div class="main-rounded-button"><a href="#schedule">View All Schedules</a></div>
+                </ul>
+            </div>
+            <div class="col-lg-8">
+                <section class='tabs-content'>
+                    <article id='tabs-1'>
+                        <img src="~/assets/images/training-image-01.jpg" alt="First Class">
+                        <h4>Weight lifting Class</h4>
+                        <p>Weight lifting is a type of strength training that involves lifting and lowering weights, such as barbells, dumbbells, or kettlebells. Weight lifting can help improve muscle mass, strength, endurance, and power. Weight lifting can also benefit your health by reducing the risk of chronic diseases, such as diabetes, heart disease, and osteoporosis.</p>
+                        <div class="main-button">
+                            <a href="#schedule">View Schedule</a>
+                        </div>
+                    </article>
+                    <article id='tabs-2'>
+                        <img src="~/assets/images/training-image-02.jpg" alt="Second Training">
+                        <h4>Cardio Class</h4>
+                        <p>Cardio Sport is a comprehensive training system that will get you into the best shape of your life.This unique method is designed to excite and inspire people who love team sports (and music). The technical definition of Cardio Sport is comprehensive athletic conditioning integration.</p>
+                        <div class="main-button">
+                            <a href="#schedule">View Schedule</a>
+                        </div>
+                    </article>
+                    <article id='tabs-3'>
+                        <img src="~/assets/images/training-image-03.jpg" alt="Third Class">
+                        <h4>Fitness Class</h4>
+                        <p>Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities. Physical fitness is generally achieved through proper nutrition, moderate-vigorous physical exercise, and sufficient rest along with a formal recovery plan.</p>
+                        <div class="main-button">
+                            <a href="#schedule">View Schedule</a>
+                        </div>
+                    </article>
+                    <article id='tabs-4'>
+                        <img src="~/assets/images/training-image-04.jpg" alt="Fourth Training">
+                        <h4>Yoga Class</h4>
+                        <p>Yoga is an ancient practice that involves physical poses, concentration, and deep breathing. Yoga aims to promote physical and mental well-being and spiritual connection. There are several types of yoga and each one has its own characteristics.</p>
+                        <div class="main-button">
+                            <a href="#schedule">View Schedule</a>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Our Classes End ***** -->
+
+<div class="offer_area offer_bg">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-lg-6">
+                <div class="offer_text">
+                    <h4>
+                        A Big Offer for <br>
+                        This Summer
+                    </h4>
+                    <h3>50% Off</h3>
+                    <p>Before your body, your mind comes to the gym.Get the offer now</p>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="priscing_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_prising text-center">
+                    <div class="prising_header">
+                            <h3>Beginner</h3>
+                            <span>$45</span>
+                    </div>
+                    <div class="pricing_body">
+                        <ul>
+                            <li>24h unlimited access</li>
+                            <li>Trainer Advice</li>
+                            <li class="off-color">Locker + Bathroom</li>
+                            <li class="off-color">Personal trainer</li>
+                        </ul>
+                    </div>
+                    <div class="pricing_btn">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_prising text-center">
+                    <div class="prising_header">
+                            <h3>Expert</h3>
+                            <span>$45</span>
+                    </div>
+                    <div class="pricing_body">
+                        <ul>
+                            <li>24h unlimited access</li>
+                            <li>Trainer Advice</li>
+                            <li class="off-color">Locker + Bathroom</li>
+                            <li class="off-color">Personal trainer</li>
+                        </ul>
+                    </div>
+                    <div class="pricing_btn">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_prising text-center">
+                    <div class="prising_header">
+                            <h3>Pro</h3>
+                            <span>$45</span>
+                    </div>
+                    <div class="pricing_body">
+                        <ul>
+                            <li>24h unlimited access</li>
+                            <li>Trainer Advice</li>
+                            <li class="off-color">Locker + Bathroom</li>
+                            <li class="off-color">Personal trainer</li>
+                        </ul>
+                    </div>
+                    <div class="pricing_btn">
+                        <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- big_offer_area start  -->
+<div class="big_offer_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="offter_text text-center">
+                    <h3>A Big Offer for <br>
+                            This Summer</h3>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="boxed-btn3">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- big_offer_area end  -->
+<!-- ***** Testimonials Starts ***** -->
+<section class="section" id="trainers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>Expert <em>Trainers</em></h2>
+                    <img src="~/assets/images/line-dec.png" alt="">
+                    <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="~/assets/images/first-trainer.jpg" alt="">
+                    </div>
+                    <div class="down-content">
+                        <span>Strength Trainer</span>
+                        <h4>Bret D. Bowers</h4>
+                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="~/assets/images/second-trainer.jpg" alt="">
+                    </div>
+                    <div class="down-content">
+                        <span>Muscle Trainer</span>
+                        <h4>Hector T. Daigl</h4>
+                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="~/assets/images/third-trainer.jpg" alt="">
+                    </div>
+                    <div class="down-content">
+                        <span>Power Trainer</span>
+                        <h4>Paul D. Newman</h4>
+                        <p>Bitters cliche tattooed 8-bit distillery mustache. Keytar succulents gluten-free vegan church-key pour-over seitan flannel.</p>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Testimonials Ends ***** -->

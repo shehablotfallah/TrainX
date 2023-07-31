@@ -1,0 +1,62 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*Begin New Style*/
+.cardstyle {
+    color:#fff;
+    background-color: #1A1A1A;
+    width: 21.25em;
+    box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+    border-radius: 10px;
+    transition: 0.7s ease;
+}
+
+.cardstyle:hover {
+    transform: scale(1.1);
+}
+
+.textcolor h5 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.textcolor p {
+    color: #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.textcolor a {
+    color:#f0f0f0 !important;
+    background-color: #ed563b;
+}
+
+.textcolor a:hover {
+    color: #f0f0f0 !important;
+    background-color: #f9735b;
+    opacity: 1;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+/*End New Style*/
