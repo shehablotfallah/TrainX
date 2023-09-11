@@ -1,7 +1,7 @@
 ﻿@model TrainX.Models.User
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
 }
 
 <section class="section">
@@ -10,13 +10,14 @@
             <div class="col-lg-10 offset-lg-1">
                 <div class="cta-content">
                     <div class="section-heading">
-                        <h2>Details <em>User</em></h2>
+                        <h2>Delete <em>User</em></h2>
                         <img src="~/assets/images/line-dec.png" alt="waves">
                         <p>Training Studio is free CSS template for gyms and fitness centers. You are allowed to use this layout for your business website.</p>
                     </div>
                 </div>
             </div>
         </div>
+        <h3 class="text-danger mb-3">Are you sure you want to delete this User "@Html.DisplayFor(model => model.Name)"?</h3>
         <div>
             <dl class="row mb-5">
                 <dt class="col-sm-2 mb-2">
@@ -41,16 +42,18 @@
                     @Html.DisplayNameFor(model => model.Sport)
                 </dt>
                 <dd class="col-sm-10 mb-2">
-                    @Html.DisplayFor(model => model.Sport.Id)
+                    @Html.DisplayFor(model => model.Sport.Name)
                 </dd>
             </dl>
-        </div>
-        <div>
-            <a class="btn btn-success mr-2" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-            <div class="btn btn-outline-danger ml-2">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                <a class="text-capitalize text-light" asp-action="Index">Back to List</a>
-            </div>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Delete" class="btn btn-danger mr-2" /> |
+                <div class="btn btn-outline-danger  ml-2">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <a class="text-capitalize text-light" asp-action="Index">Back to List</a>
+                </div>
+            </form>
         </div>
     </div>
 </section>
