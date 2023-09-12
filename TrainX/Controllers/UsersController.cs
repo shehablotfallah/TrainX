@@ -44,7 +44,7 @@ namespace TrainX.Controllers
 
         public IActionResult Create()
         {
-            ViewData["SportId"] = new SelectList(_context.Sports, "Id", "Id" , "Name", "Name");
+            ViewBag.Sports = new SelectList(_context.Sports.ToList(), "Id", "Name");
             return View();
         }
 
