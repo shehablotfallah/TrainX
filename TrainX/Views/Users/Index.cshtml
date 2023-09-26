@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TrainX.Models.User>
+﻿@model IEnumerable<User>
 
 @{
     ViewData["Title"] = "Index";
@@ -52,10 +52,10 @@
                                     @Html.DisplayFor(modelItem => item.Email)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Password)
+                                    @item.Password.PadRight(10, '*').PadLeft(15,'*')
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Sport.Name)
+                                    @Html.DisplayFor(modelItem => item.Sport!.Name)
                                 </td>
                                 <td>
                                     <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

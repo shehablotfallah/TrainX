@@ -4,47 +4,47 @@ using TrainX.Models;
 
 namespace TrainX.Controllers
 {
-    
-    public class HomeController : Controller
-    {
-        private readonly TrainXContext _context;
 
-        public HomeController(TrainXContext context)
-        {
-            _context = context;
-        }
+	public class HomeController : Controller
+	{
+		private readonly TrainXContext _context;
 
-        public IActionResult Index()
-        {
-            var sport= _context.Sports.ToList();
-            return View(sport);
-        }
+		public HomeController(TrainXContext context)
+		{
+			_context = context;
+		}
 
-        public IActionResult Program()
-        {
-            var sport = _context.Sports.ToList();
-            return View(sport);
-        }
+		public IActionResult Index()
+		{
+			var sport = _context.Sports.ToList();
+			return View(sport);
+		}
 
-        public IActionResult Classes()
-        {
-            return View();
-        }
+		public IActionResult Program()
+		{
+			var sport = _context.Sports.ToList();
+			return View(sport);
+		}
 
-        public IActionResult Contact()
-        {
-            return View();
-        }
+		public IActionResult Classes()
+		{
+			return View();
+		}
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+		public IActionResult Contact()
+		{
+			return View();
+		}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+		public IActionResult Privacy()
+		{
+			return View();
+		}
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
+			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+	}
 }

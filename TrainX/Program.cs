@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using TrainX.Data;
 using TrainX.Models;
 
 var builder = WebApplication.CreateBuilder(args);

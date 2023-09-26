@@ -1,0 +1,48 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Log In";
+}
+
+<section class="section">
+    <div class="container text-light">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <div class="section-heading mb-0">
+                        <h2><em>@ViewData["Title"] </em>Page</h2>
+                        <img alt="log in" src="https://cdn-icons-png.flaticon.com/512/2037/2037161.png" style="height:200px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <section>
+
+                    <h3 class="text-light text-center mb-5">@ViewData["Title"] </h3>
+                    <form id="account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-floating">
+                            <input asp-for="Email" class="form-control form-control-solid" autocomplete="username" aria-required="true" />
+                            <label asp-for="Email" class="form-label"></label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating">
+                            <input asp-for="Password" class="form-control form-control-solid" autocomplete="current-password" aria-required="true" />
+                            <label asp-for="Password" class="form-label"></label>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                        </div>
+                        
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

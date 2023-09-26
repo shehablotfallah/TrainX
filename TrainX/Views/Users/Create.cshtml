@@ -1,4 +1,4 @@
-﻿@model TrainX.Models.User
+﻿@model User
 
 @{
     ViewData["Title"] = "Create";
@@ -40,7 +40,9 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="SportId" class="control-label"></label>
-                        <select asp-for="SportId" class="form-control" asp-items="ViewBag.Sports"></select>
+                        <select asp-for="SportId" class="form-control" asp-items="ViewBag.Sports">
+                            <option value="" >Select a sport</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Create" class="btn btn-primary" />
